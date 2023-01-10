@@ -1,0 +1,878 @@
+{
+  "contractName": "ILayerZeroUserApplicationConfig",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_version",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_chainId",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_configType",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_config",
+          "type": "bytes"
+        }
+      ],
+      "name": "setConfig",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_version",
+          "type": "uint16"
+        }
+      ],
+      "name": "setSendVersion",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_version",
+          "type": "uint16"
+        }
+      ],
+      "name": "setReceiveVersion",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_srcChainId",
+          "type": "uint16"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_srcAddress",
+          "type": "bytes"
+        }
+      ],
+      "name": "forceResumeReceive",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"_srcChainId\",\"type\":\"uint16\"},{\"internalType\":\"bytes\",\"name\":\"_srcAddress\",\"type\":\"bytes\"}],\"name\":\"forceResumeReceive\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"_version\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"_chainId\",\"type\":\"uint16\"},{\"internalType\":\"uint256\",\"name\":\"_configType\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_config\",\"type\":\"bytes\"}],\"name\":\"setConfig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"_version\",\"type\":\"uint16\"}],\"name\":\"setReceiveVersion\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"_version\",\"type\":\"uint16\"}],\"name\":\"setSendVersion\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/ILayerZeroUserApplicationConfig.sol\":\"ILayerZeroUserApplicationConfig\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/ILayerZeroUserApplicationConfig.sol\":{\"keccak256\":\"0x3f6707ec8829588ae4eb629ca952b9b019532ce47aa01aad48bcdf9d03c72bac\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://a029a1292676d99973633c682e6ab56631762baec44cd7094040275397e1524f\",\"dweb:/ipfs/QmUcKQMhtqxWbrnLhSt2hMtdHSrUYfEdhWUCUkCuYCvqsE\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: BUSL-1.1\r\n\r\npragma solidity >=0.5.0;\r\n\r\ninterface ILayerZeroUserApplicationConfig {\r\n    // @notice set the configuration of the LayerZero messaging library of the specified version\r\n    // @param _version - messaging library version\r\n    // @param _chainId - the chainId for the pending config change\r\n    // @param _configType - type of configuration. every messaging library has its own convention.\r\n    // @param _config - configuration in the bytes. can encode arbitrary content.\r\n    function setConfig(uint16 _version, uint16 _chainId, uint _configType, bytes calldata _config) external;\r\n\r\n    // @notice set the send() LayerZero messaging library version to _version\r\n    // @param _version - new messaging library version\r\n    function setSendVersion(uint16 _version) external;\r\n\r\n    // @notice set the lzReceive() LayerZero messaging library version to _version\r\n    // @param _version - new messaging library version\r\n    function setReceiveVersion(uint16 _version) external;\r\n\r\n    // @notice Only when the UA needs to resume the message flow in blocking mode and clear the stored payload\r\n    // @param _srcChainId - the chainId of the source chain\r\n    // @param _srcAddress - the contract address of the source contract at the source chain\r\n    function forceResumeReceive(uint16 _srcChainId, bytes calldata _srcAddress) external;\r\n}\r\n",
+  "sourcePath": "F:\\blockchain\\stargate\\contracts\\interfaces\\ILayerZeroUserApplicationConfig.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/ILayerZeroUserApplicationConfig.sol",
+    "exportedSymbols": {
+      "ILayerZeroUserApplicationConfig": [
+        3665
+      ]
+    },
+    "id": 3666,
+    "license": "BUSL-1.1",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3636,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:24:15"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 3665,
+        "linearizedBaseContracts": [
+          3665
+        ],
+        "name": "ILayerZeroUserApplicationConfig",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "cbed8b9c",
+            "id": 3647,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setConfig",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3645,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3638,
+                  "mutability": "mutable",
+                  "name": "_version",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3647,
+                  "src": "537:15:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 3637,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "537:6:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3640,
+                  "mutability": "mutable",
+                  "name": "_chainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3647,
+                  "src": "554:15:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 3639,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "554:6:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3642,
+                  "mutability": "mutable",
+                  "name": "_configType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3647,
+                  "src": "571:16:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3641,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "571:4:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3644,
+                  "mutability": "mutable",
+                  "name": "_config",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3647,
+                  "src": "589:22:15",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3643,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "589:5:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "536:76:15"
+            },
+            "returnParameters": {
+              "id": 3646,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "621:0:15"
+            },
+            "scope": 3665,
+            "src": "518:104:15",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "07e0db17",
+            "id": 3652,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setSendVersion",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3650,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3649,
+                  "mutability": "mutable",
+                  "name": "_version",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3652,
+                  "src": "789:15:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 3648,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "789:6:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "788:17:15"
+            },
+            "returnParameters": {
+              "id": 3651,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "814:0:15"
+            },
+            "scope": 3665,
+            "src": "765:50:15",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "10ddb137",
+            "id": 3657,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setReceiveVersion",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3655,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3654,
+                  "mutability": "mutable",
+                  "name": "_version",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3657,
+                  "src": "990:15:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 3653,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "990:6:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "989:17:15"
+            },
+            "returnParameters": {
+              "id": 3656,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1015:0:15"
+            },
+            "scope": 3665,
+            "src": "963:53:15",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "42d65a8d",
+            "id": 3664,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "forceResumeReceive",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3662,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3659,
+                  "mutability": "mutable",
+                  "name": "_srcChainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3664,
+                  "src": "1318:18:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 3658,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1318:6:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3661,
+                  "mutability": "mutable",
+                  "name": "_srcAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3664,
+                  "src": "1338:26:15",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3660,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1338:5:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1317:48:15"
+            },
+            "returnParameters": {
+              "id": 3663,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1374:0:15"
+            },
+            "scope": 3665,
+            "src": "1290:85:15",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3666,
+        "src": "68:1310:15"
+      }
+    ],
+    "src": "40:1340:15"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/interfaces/ILayerZeroUserApplicationConfig.sol",
+      "exportedSymbols": {
+        "ILayerZeroUserApplicationConfig": [
+          3665
+        ]
+      },
+      "license": "BUSL-1.1"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 3636,
+        "name": "PragmaDirective",
+        "src": "40:24:15"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            3665
+          ],
+          "name": "ILayerZeroUserApplicationConfig",
+          "scope": 3666
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "cbed8b9c",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setConfig",
+              "scope": 3665,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_version",
+                      "scope": 3647,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 3637,
+                        "name": "ElementaryTypeName",
+                        "src": "537:6:15"
+                      }
+                    ],
+                    "id": 3638,
+                    "name": "VariableDeclaration",
+                    "src": "537:15:15"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_chainId",
+                      "scope": 3647,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 3639,
+                        "name": "ElementaryTypeName",
+                        "src": "554:6:15"
+                      }
+                    ],
+                    "id": 3640,
+                    "name": "VariableDeclaration",
+                    "src": "554:15:15"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_configType",
+                      "scope": 3647,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 3641,
+                        "name": "ElementaryTypeName",
+                        "src": "571:4:15"
+                      }
+                    ],
+                    "id": 3642,
+                    "name": "VariableDeclaration",
+                    "src": "571:16:15"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_config",
+                      "scope": 3647,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 3643,
+                        "name": "ElementaryTypeName",
+                        "src": "589:5:15"
+                      }
+                    ],
+                    "id": 3644,
+                    "name": "VariableDeclaration",
+                    "src": "589:22:15"
+                  }
+                ],
+                "id": 3645,
+                "name": "ParameterList",
+                "src": "536:76:15"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3646,
+                "name": "ParameterList",
+                "src": "621:0:15"
+              }
+            ],
+            "id": 3647,
+            "name": "FunctionDefinition",
+            "src": "518:104:15"
+          },
+          {
+            "attributes": {
+              "functionSelector": "07e0db17",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setSendVersion",
+              "scope": 3665,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_version",
+                      "scope": 3652,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 3648,
+                        "name": "ElementaryTypeName",
+                        "src": "789:6:15"
+                      }
+                    ],
+                    "id": 3649,
+                    "name": "VariableDeclaration",
+                    "src": "789:15:15"
+                  }
+                ],
+                "id": 3650,
+                "name": "ParameterList",
+                "src": "788:17:15"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3651,
+                "name": "ParameterList",
+                "src": "814:0:15"
+              }
+            ],
+            "id": 3652,
+            "name": "FunctionDefinition",
+            "src": "765:50:15"
+          },
+          {
+            "attributes": {
+              "functionSelector": "10ddb137",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setReceiveVersion",
+              "scope": 3665,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_version",
+                      "scope": 3657,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 3653,
+                        "name": "ElementaryTypeName",
+                        "src": "990:6:15"
+                      }
+                    ],
+                    "id": 3654,
+                    "name": "VariableDeclaration",
+                    "src": "990:15:15"
+                  }
+                ],
+                "id": 3655,
+                "name": "ParameterList",
+                "src": "989:17:15"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3656,
+                "name": "ParameterList",
+                "src": "1015:0:15"
+              }
+            ],
+            "id": 3657,
+            "name": "FunctionDefinition",
+            "src": "963:53:15"
+          },
+          {
+            "attributes": {
+              "functionSelector": "42d65a8d",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "forceResumeReceive",
+              "scope": 3665,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_srcChainId",
+                      "scope": 3664,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 3658,
+                        "name": "ElementaryTypeName",
+                        "src": "1318:6:15"
+                      }
+                    ],
+                    "id": 3659,
+                    "name": "VariableDeclaration",
+                    "src": "1318:18:15"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_srcAddress",
+                      "scope": 3664,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 3660,
+                        "name": "ElementaryTypeName",
+                        "src": "1338:5:15"
+                      }
+                    ],
+                    "id": 3661,
+                    "name": "VariableDeclaration",
+                    "src": "1338:26:15"
+                  }
+                ],
+                "id": 3662,
+                "name": "ParameterList",
+                "src": "1317:48:15"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3663,
+                "name": "ParameterList",
+                "src": "1374:0:15"
+              }
+            ],
+            "id": 3664,
+            "name": "FunctionDefinition",
+            "src": "1290:85:15"
+          }
+        ],
+        "id": 3665,
+        "name": "ContractDefinition",
+        "src": "68:1310:15"
+      }
+    ],
+    "id": 3666,
+    "name": "SourceUnit",
+    "src": "40:1340:15"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.11",
+  "updatedAt": "2023-01-10T17:40:07.145Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
