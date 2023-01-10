@@ -116,6 +116,6 @@ artifacts
 package-lock.json
 
 .DS_Store
-docs/
+# docs/
 coverage.json
 deployments/localhost*
