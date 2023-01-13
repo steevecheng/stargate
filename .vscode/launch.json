@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "name": "hardhat test",
+        "type": "node",
+        "request": "launch",
+        "skipFiles": ["<node_internals>/**"],
+        "console": "integratedTerminal",
+        "runtimeExecutable": "npm",
+        "args": ["run", "${fileBasenameNoExtension}"],
+    }
+  ]
+}
