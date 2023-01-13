@@ -2,7 +2,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-        "name": "hardhat test",
+        "name": "all test",
+        "type": "node",
+        "request": "launch",
+        "skipFiles": ["<node_internals>/**"],
+        "console": "integratedTerminal",
+        "runtimeExecutable": "npm",
+        "args": ["run", "test"],
+    },
+    {
+        "name": "current file test",
         "type": "node",
         "request": "launch",
         "skipFiles": ["<node_internals>/**"],
