@@ -5,7 +5,7 @@ const { callAsContract } = require("../test/util/helpers")
 const { ZERO_ADDRESS } = require("./util/constants")
 const { getAddr, deployNew, encodeParams } = require("./util/helpers")
 
-describe("StargateToke:", function () {
+describe("StargateToken:", function () {
     let owner, alice, badUser1, fakeContract, lzEndpoint
     let chainId, chainIdB, nonce, symbol, decimals, name, initSupplyEndpoint, stargateToken, lzVersion
 
